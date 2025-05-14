@@ -62,14 +62,30 @@ function Home() {
 }
 
 function Dashboard() {
+  const [mood, setMood] = useState(5);
+
   return (
-    <div className="min-h-screen bg-white p-10">
-      <h1 className="text-4xl font-bold text-blue-900 mb-6">Employee Well-Being Dashboard</h1>
+    <div className="min-h-screen bg-white p-10 space-y-10">
+      <h1 className="text-4xl font-bold text-blue-900">Employee Well-Being Dashboard</h1>
+
       <div className="relative bg-blue-100 h-64 rounded-xl flex items-center justify-center shadow-inner">
         <span className="text-2xl text-blue-700 font-medium">Graph Placeholder</span>
         <div className="absolute inset-0 bg-white/80 rounded-xl flex items-center justify-center">
           <span className="text-lg text-gray-600 font-semibold">Do the Tests!</span>
         </div>
+      </div>
+
+      <div className="bg-yellow-50 p-6 rounded-xl shadow-md border border-yellow-200">
+        <h2 className="text-xl font-semibold text-blue-800 mb-4">How are you feeling today?</h2>
+        <input
+          type="range"
+          min="0"
+          max="10"
+          value={mood}
+          onChange={(e) => setMood(e.target.value)}
+          className="w-full accent-blue-500"
+        />
+        <p className="mt-2 text-blue-700">Mood Level: <strong>{mood}</strong></p>
       </div>
     </div>
   );
