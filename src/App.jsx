@@ -44,6 +44,27 @@ function Home() {
           <button className="mt-4 bg-blue-400 text-white px-4 py-2 rounded shadow hover:bg-blue-500">Explore Insights</button>
         </Link>
       </section>
+      <section className="mt-16 space-y-6 bg-white p-8 rounded-2xl shadow-md border border-yellow-100">
+        <h3 className="text-3xl font-bold text-blue-900 text-center">How It Works</h3>
+        <ul className="list-disc list-inside text-gray-800 space-y-2">
+          <li>Log daily mood & stress via soft UI sliders</li>
+          <li>Get immediate micro-interventions from CoachBot</li>
+          <li>Review cognitive load and motivational dips</li>
+          <li>Team leaders access anonymized well-being trends</li>
+        </ul>
+      </section>
+
+      <section className="mt-16">
+        <div className="bg-blue-50 p-8 rounded-xl shadow-inner border border-blue-200">
+          <h3 className="text-2xl font-bold text-blue-800 mb-2">Technical Documentation</h3>
+          <p className="text-gray-600">Placeholder for developer API, system architecture, and GDPR protocols.</p>
+          <button className="mt-4 bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800">View Developer Docs</button>
+        </div>
+      </section>
+
+      <footer className="mt-20 text-center text-gray-500 text-sm">
+        © 2025 Neuroawareness Inc. | Privacy-first by design. Built for workplace well-being.
+      </footer>
     </div>
   );
 }
