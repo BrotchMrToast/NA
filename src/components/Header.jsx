@@ -1,13 +1,20 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+// File: src/components/Header.jsx
+// Purpose: Top navigation bar styled like Bubble UI
 
-body {
-  @apply bg-blue-50 text-gray-800 font-sans;
-}
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-html, body, #root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+export default function Header() {
+  return (
+    <header className="bg-white shadow-md border-b border-blue-100 px-6 py-4 flex justify-between items-center">
+      <div className="text-xl font-bold text-blue-800">
+        NeuroAwareness
+      </div>
+      <nav className="space-x-6 text-blue-700 text-sm font-medium">
+        <Link to="/" className="hover:text-blue-900 transition">Home</Link>
+        <Link to="/dashboard" className="hover:text-blue-900 transition">Dashboard</Link>
+        <Link to="/coachbot" className="hover:text-blue-900 transition">CoachBot</Link>
+      </nav>
+    </header>
+  );
 }
