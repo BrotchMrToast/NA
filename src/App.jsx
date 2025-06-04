@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
+import HRDashboard from './pages/HRDashboard';
 import CoachBot from './pages/CoachBot';
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/coachbot" element={<CoachBot />} />
+            <Route path="/hr" element={<HRDashboard />} />
           </Routes>
         </main>
         <Footer />
