@@ -1,10 +1,11 @@
 // File: src/pages/Dashboard.jsx
-// Purpose: Dashboard page with mood slider, EWI graph, and planner mock
+// Purpose: Dashboard with modular MoodSlider, EWI graph, and planner mock
 
 import React, { useState } from 'react';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
+import MoodSlider from '../components/MoodSlider';
 
 const sampleEWIData = [
   { day: 'Mon', ewi: 4.5 },
@@ -34,18 +35,7 @@ export default function Dashboard() {
         </ResponsiveContainer>
       </div>
 
-      <div className="bg-yellow-50 p-6 rounded-xl shadow-md border border-yellow-200">
-        <h2 className="text-xl font-semibold text-blue-800 mb-4">How are you feeling today?</h2>
-        <input
-          type="range"
-          min="0"
-          max="10"
-          value={mood}
-          onChange={(e) => setMood(e.target.value)}
-          className="w-full accent-blue-500"
-        />
-        <p className="mt-2 text-blue-700">Mood Level: <strong>{mood}</strong></p>
-      </div>
+      <MoodSlider value={mood} onChange={(e) => setMood(e.target.value)} />
 
       <div className="bg-gray-50 p-6 rounded-xl shadow border border-gray-200">
         <h2 className="text-xl font-semibold text-blue-800 mb-2">Smart Daily Planner (Mock)</h2>
