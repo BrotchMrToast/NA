@@ -1,25 +1,25 @@
 // File: src/components/MoodSlider.jsx
-// Purpose: Standalone reusable component for mood level selection
+// Purpose: Standalone reusable component for mood level selection + store mood
 
 import React from 'react';
 import { supabase } from '../supabaseClient';
 
-const handleMoodChange = async (e) => {
-  const newMood = Number(e.target.value);
-  setMood(newMood);
-
-  const { error } = await supabase
-    .from('mood_logs')
-    .insert([{ mood_value: newMood, created_at: new Date() }]);
-
-  if (error) {
-    console.error("❌ Mood not saved:", error.message);
-  } else {
-    console.log("✅ Mood saved to Supabase:", newMood);
-  }
-};
-
 export default function MoodSlider({ value, onChange }) {
+  const handleMoodChange = async (e) => {
+    const newMood = Number(e.target.value);
+    onChange(e); // Call parent to update state
+
+    const { error } = await supabase
+      .from('mood_logs')
+      .insert([{ mood_value: newMood, created_at: new Date() }]);
+
+    if (error) {
+      console.error("❌ Mood not saved:", error.message);
+    } else {
+      console.log("✅ Mood saved to Supabase:", newMood);
+    }
+  };
+
   return (
     <div className="bg-yellow-50 p-6 rounded-xl shadow-md border border-yellow-200">
       <h2 className="text-xl font-semibold text-blue-800 mb-4">How are you feeling today?</h2>
