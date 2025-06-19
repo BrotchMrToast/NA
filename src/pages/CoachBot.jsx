@@ -21,7 +21,7 @@ export default function CoachBot() {
     setInput("");
 
     try {
-      const userId = dev-user-1; // Replace with Supabase Auth ID when implemented
+      const userId = crypto.randomUUID(); // Replace with Supabase Auth ID when implemented
 
       // Insert user message
       const { error: userError } = await supabase.from("chat_logs").insert([
